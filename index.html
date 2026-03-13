@@ -126,6 +126,11 @@ const api =
 const pagesBase =
   https://${OWNER}.github.io/${REPO}/;
 
+// Kiểm tra xem có đang chạy trên local không
+const isLocal = window.location.hostname === "localhost" || 
+                window.location.hostname === "127.0.0.1" ||
+                window.location.hostname.includes("192.168.");
+
 fetch(api)
   .then(res => res.json())
   .then(data => {
@@ -147,7 +152,13 @@ fetch(api)
     [...dirs].sort().forEach(dir => {
       const a = document.createElement("a");
       a.className = "card";
-      a.href = pagesBase + dir + "/";
+
+      // Nếu đang chạy local, dùng đường dẫn tương đối
+      if (isLocal) {
+        a.href = ./${dir}/;
+      } else {
+        a.href = pagesBase + dir + "/";
+      }
 
       a.innerHTML = `
         <div class="folder-name">${dir}</div>
@@ -157,9 +168,9 @@ fetch(api)
       root.appendChild(a);
     });
   })
-  .catch(() => {
+  .catch(err => {
     document.getElementById("folders").textContent =
-      "Lỗi GitHub API";
+      "Lỗi GitHub API: " + err.message;
   });
 </script>
 
