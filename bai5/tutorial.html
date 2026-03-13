@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tutorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="FJGang.png">
+<span>MC Plugin Dev</span>
+</div>
+
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="tutorial.html">Tutorial</a>
+<a href="plugins.html">Plugins</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</nav>
+
+<section class="page">
+
+    <div class="wiki">
+
+        <aside class="wiki-sidebar">
+        
+        <h2>Plugin Guide</h2>
+        
+        <ul>
+        
+        <li onclick="loadTutorial('intro')">Introduction</li>
+        
+        <li onclick="loadTutorial('setup')">Setup Plugin</li>
+        
+        <li onclick="loadTutorial('command')">Create Command</li>
+        
+        <li onclick="loadTutorial('event')">Events</li>
+        
+        </ul>
+        
+        </aside>
+        
+        <main class="wiki-content" id="tutorial-content">
+        
+            <h1>Plugin Tutorial</h1>
+
+            <p>
+            Welcome to the Minecraft Plugin Development Guide.
+            Choose a tutorial from the left to start learning how to create
+            Minecraft plugins using Java and the Spigot API.
+            </p>
+        
+        </main>
+        
+        </div>
+        
+        <script src="script.js"></script>
+        
+        </body>
+        </html>
