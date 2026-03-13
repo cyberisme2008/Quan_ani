@@ -121,10 +121,10 @@ const REPO   = "Quan_ani";
 const BRANCH = "main";
 
 const api =
-  https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1;
+  `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`;
 
 const pagesBase =
-  https://${OWNER}.github.io/${REPO}/;
+  `https://${OWNER}.github.io/${REPO}/`;
 
 // Kiểm tra xem có đang chạy trên local không
 const isLocal = window.location.hostname === "localhost" || 
@@ -155,7 +155,7 @@ fetch(api)
 
       // Nếu đang chạy local, dùng đường dẫn tương đối
       if (isLocal) {
-        a.href = ./${dir}/;
+        a.href = `./${dir}/`;
       } else {
         a.href = pagesBase + dir + "/";
       }
